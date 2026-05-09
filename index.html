@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Manage Your Work Smarter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">⬡</span>
+        TaskFlow
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#" class="btn-ghost">Log In</a>
+        <a href="#" class="btn-primary">Get Started Free</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#" class="btn-primary">Get Started Free</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Trusted by 50,000+ teams worldwide
+      </div>
+      <h1 class="hero-title reveal">
+        Manage Your Work<br /><span class="gradient-text">Smarter</span>
+      </h1>
+      <p class="hero-sub reveal">
+        All-in-one productivity tool for teams and individuals.<br />
+        Streamline tasks, collaborate in real-time, and hit every deadline.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#" class="btn-primary btn-lg">
+          Get Started Free
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#how-it-works" class="btn-outline btn-lg">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M6.5 6c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 .69-.46 1.27-1.1 1.43L8 7.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11" r=".75" fill="currentColor"/></svg>
+          See how it works
+        </a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat"><strong>50K+</strong><span>Active Teams</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>99.9%</strong><span>Uptime SLA</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>4.9★</strong><span>User Rating</span></div>
+      </div>
+
+      <!-- Dashboard Preview -->
+      <div class="dashboard-wrap reveal">
+        <div class="dashboard-browser">
+          <div class="browser-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <div class="browser-url">taskflow.app/dashboard</div>
+          </div>
+          <div class="dashboard-ui">
+            <div class="dash-sidebar">
+              <div class="dash-logo">⬡ TaskFlow</div>
+              <nav class="dash-nav">
+                <div class="dash-nav-item active">
+                  <span class="icon">▦</span> Dashboard
+                </div>
+                <div class="dash-nav-item">
+                  <span class="icon">✓</span> My Tasks
+                </div>
+                <div class="dash-nav-item">
+                  <span class="icon">⊞</span> Projects
+                </div>
+                <div class="dash-nav-item">
+                  <span class="icon">◎</span> Analytics
+                </div>
+                <div class="dash-nav-item">
+                  <span class="icon">◈</span> Team
+                </div>
+              </nav>
+            </div>
+            <div class="dash-main">
+              <div class="dash-header-row">
+                <div>
+                  <div class="dash-greeting">Good morning, Alex 👋</div>
+                  <div class="dash-subtext">You have 5 tasks due today</div>
+                </div>
+                <div class="dash-avatar-row">
+                  <div class="dash-avatar" style="background:#6366f1">A</div>
+                  <div class="dash-avatar" style="background:#0ea5e9">M</div>
+                  <div class="dash-avatar" style="background:#f59e0b">R</div>
+                </div>
+              </div>
+              <div class="dash-cards">
+                <div class="dash-card blue-card">
+                  <div class="card-label">Total Tasks</div>
+                  <div class="card-num">142</div>
+                  <div class="card-trend up">↑ 12% this week</div>
+                </div>
+                <div class="dash-card">
+                  <div class="card-label">Completed</div>
+                  <div class="card-num">98</div>
+                  <div class="card-trend up">↑ 8%</div>
+                </div>
+                <div class="dash-card">
+                  <div class="card-label">In Progress</div>
+                  <div class="card-num">34</div>
+                  <div class="card-trend neutral">— stable</div>
+                </div>
+              </div>
+              <div class="dash-tasks-title">Today's Tasks</div>
+              <div class="dash-task-list">
+                <div class="dash-task done">
+                  <span class="check done-check">✓</span>
+                  <span>Update project roadmap</span>
+                  <span class="tag design">Design</span>
+                </div>
+                <div class="dash-task">
+                  <span class="check"></span>
+                  <span>Review Q3 analytics report</span>
+                  <span class="tag dev">Dev</span>
+                </div>
+                <div class="dash-task">
+                  <span class="check"></span>
+                  <span>Team standup at 10AM</span>
+                  <span class="tag meeting">Meeting</span>
+                </div>
+                <div class="dash-task">
+                  <span class="check"></span>
+                  <span>Deploy new feature branch</span>
+                  <span class="tag dev">Dev</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card card-notif reveal-float">
+          <div class="notif-icon">🎉</div>
+          <div>
+            <div class="notif-title">Sprint Complete!</div>
+            <div class="notif-sub">Team finished 3 days early</div>
+          </div>
+        </div>
+        <div class="floating-card card-progress reveal-float-2">
+          <div class="prog-label">Overall Progress</div>
+          <div class="prog-bar-wrap"><div class="prog-bar" style="width:78%"></div></div>
+          <div class="prog-pct">78% complete</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOGOS STRIP ========== -->
+  <section class="logos-strip">
+    <div class="container">
+      <p class="logos-label">Trusted by teams at</p>
+      <div class="logos-track">
+        <div class="logo-item">Dropbox</div>
+        <div class="logo-item">Shopify</div>
+        <div class="logo-item">Figma</div>
+        <div class="logo-item">Vercel</div>
+        <div class="logo-item">Linear</div>
+        <div class="logo-item">Loom</div>
+        <div class="logo-item">Notion</div>
+        <div class="logo-item">Intercom</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES SECTION ========== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-label reveal">Features</div>
+      <h2 class="section-title reveal">Everything you need to <span class="gradient-text">ship faster</span></h2>
+      <p class="section-sub reveal">Purpose-built tools that eliminate busywork so your team can focus on what matters.</p>
+      <div class="features-grid">
+
+        <div class="feature-card reveal">
+          <div class="feature-icon icon-blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Task Management</h3>
+          <p>Create, assign, and track tasks with priority labels, due dates, and custom workflows that adapt to how your team actually works.</p>
+          <div class="feature-tags">
+            <span>Kanban</span><span>Due dates</span><span>Subtasks</span>
+          </div>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon icon-indigo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c0-3.31 2.69-6 6-6h6c3.31 0 6 2.69 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Team Collaboration</h3>
+          <p>Comment threads, @mentions, file sharing, and real-time presence — keep every conversation in context, right where the work happens.</p>
+          <div class="feature-tags">
+            <span>Real-time</span><span>Mentions</span><span>Files</span>
+          </div>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon icon-sky">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20V14M8 20V10M12 20V8M16 20V4M20 20V12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Analytics Dashboard</h3>
+          <p>Visual burndown charts, team velocity, and bottleneck detection give you the insights to optimize your workflow before deadlines slip.</p>
+          <div class="feature-tags">
+            <span>Charts</span><span>Reports</span><span>Exports</span>
+          </div>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon icon-emerald">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Smart Automations</h3>
+          <p>Set triggers and actions that handle routine work for you — auto-assign tasks, send reminders, update statuses, and notify the right people.</p>
+          <div class="feature-tags">
+            <span>Triggers</span><span>Actions</span><span>Webhooks</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS SECTION ========== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-label reveal">How It Works</div>
+      <h2 class="section-title reveal">Up and running in <span class="gradient-text">minutes</span></h2>
+      <p class="section-sub reveal">No lengthy setup. No consultant needed. Just sign up and start shipping.</p>
+      <div class="steps-grid">
+
+        <div class="step-card reveal">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="6" width="22" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M9 14h10M14 9v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Create Your Workspace</h3>
+          <p>Sign up in seconds. Invite your team, set up your first project, and customize your workflow in minutes — not weeks.</p>
+        </div>
+
+        <div class="step-connector reveal">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">→</div>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-number">02</div>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M14 9v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Assign & Track Tasks</h3>
+          <p>Break projects into tasks, assign owners, set due dates, and watch your board update in real-time as your team makes progress.</p>
+        </div>
+
+        <div class="step-connector reveal">
+          <div class="connector-line"></div>
+          <div class="connector-arrow">→</div>
+        </div>
+
+        <div class="step-card reveal">
+          <div class="step-number">03</div>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M7 14l5 5 9-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <h3>Deliver & Celebrate</h3>
+          <p>Hit your milestones, analyze what worked, and continuously improve. Your analytics dashboard evolves with every sprint.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENEFITS SECTION ========== -->
+  <section class="benefits">
+    <div class="container benefits-inner">
+      <div class="benefits-text">
+        <div class="section-label reveal">Why TaskFlow</div>
+        <h2 class="section-title reveal">Built for how <span class="gradient-text">real teams</span> work</h2>
+        <div class="benefits-list">
+          <div class="benefit-item reveal">
+            <div class="benefit-check">✓</div>
+            <div>
+              <h4>Save 6+ hours per week</h4>
+              <p>Eliminate status meetings and manual updates. TaskFlow surfaces the right information at the right time.</p>
+            </div>
+          </div>
+          <div class="benefit-item reveal">
+            <div class="benefit-check">✓</div>
+            <div>
+              <h4>Increase team productivity by 40%</h4>
+              <p>Focused, distraction-free workflows. Know exactly what to work on next without asking.</p>
+            </div>
+          </div>
+          <div class="benefit-item reveal">
+            <div class="benefit-check">✓</div>
+            <div>
+              <h4>Instantly intuitive</h4>
+              <p>Zero learning curve. New teammates are productive on day one — no training required.</p>
+            </div>
+          </div>
+          <div class="benefit-item reveal">
+            <div class="benefit-check">✓</div>
+            <div>
+              <h4>Enterprise-grade security</h4>
+              <p>SOC 2 Type II certified. SSO, 2FA, audit logs, and role-based permissions included on all plans.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="benefits-visual reveal">
+        <div class="benefits-card-stack">
+          <div class="bcard bcard-1">
+            <div class="bcard-icon">⚡</div>
+            <div class="bcard-stat">40%</div>
+            <div class="bcard-label">Productivity Boost</div>
+            <div class="bcard-bar"><div style="width:80%"></div></div>
+          </div>
+          <div class="bcard bcard-2">
+            <div class="bcard-icon">⏱</div>
+            <div class="bcard-stat">6h</div>
+            <div class="bcard-label">Saved Per Week</div>
+            <div class="bcard-bar"><div style="width:65%"></div></div>
+          </div>
+          <div class="bcard bcard-3">
+            <div class="bcard-icon">🎯</div>
+            <div class="bcard-stat">98%</div>
+            <div class="bcard-label">On-time Delivery</div>
+            <div class="bcard-bar"><div style="width:95%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING SECTION ========== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-label reveal">Pricing</div>
+      <h2 class="section-title reveal">Simple, transparent <span class="gradient-text">pricing</span></h2>
+      <p class="section-sub reveal">Start free. Scale as you grow. No hidden fees, ever.</p>
+      <div class="pricing-toggle reveal">
+        <span class="toggle-label active" id="monthlyLabel">Monthly</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="billingToggle" />
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label" id="annualLabel">Annual <span class="save-badge">Save 20%</span></span>
+      </div>
+      <div class="pricing-grid">
+
+        <div class="pricing-card reveal">
+          <div class="plan-name">Basic</div>
+          <div class="plan-price">
+            <span class="price-amount" data-monthly="0" data-annual="0">$0</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="plan-desc">Perfect for individuals getting started.</p>
+          <ul class="plan-features">
+            <li><span class="feat-check">✓</span> Up to 5 projects</li>
+            <li><span class="feat-check">✓</span> 10 tasks per project</li>
+            <li><span class="feat-check">✓</span> Basic analytics</li>
+            <li><span class="feat-check">✓</span> 2GB storage</li>
+            <li><span class="feat-x">✗</span> Team collaboration</li>
+            <li><span class="feat-x">✗</span> Automations</li>
+          </ul>
+          <a href="#" class="btn-outline plan-btn">Get Started Free</a>
+        </div>
+
+        <div class="pricing-card popular reveal">
+          <div class="popular-badge">Most Popular</div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">
+            <span class="price-amount" data-monthly="9" data-annual="7">$9</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="plan-desc">For professionals who need more power.</p>
+          <ul class="plan-features">
+            <li><span class="feat-check">✓</span> Unlimited projects</li>
+            <li><span class="feat-check">✓</span> Unlimited tasks</li>
+            <li><span class="feat-check">✓</span> Advanced analytics</li>
+            <li><span class="feat-check">✓</span> 50GB storage</li>
+            <li><span class="feat-check">✓</span> Up to 5 team members</li>
+            <li><span class="feat-check">✓</span> 10 automations/month</li>
+          </ul>
+          <a href="#" class="btn-primary plan-btn">Start Pro Trial</a>
+        </div>
+
+        <div class="pricing-card reveal">
+          <div class="plan-name">Team</div>
+          <div class="plan-price">
+            <span class="price-amount" data-monthly="19" data-annual="15">$19</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="plan-desc">For growing teams that need everything.</p>
+          <ul class="plan-features">
+            <li><span class="feat-check">✓</span> Everything in Pro</li>
+            <li><span class="feat-check">✓</span> Unlimited team members</li>
+            <li><span class="feat-check">✓</span> 500GB storage</li>
+            <li><span class="feat-check">✓</span> Unlimited automations</li>
+            <li><span class="feat-check">✓</span> Priority support</li>
+            <li><span class="feat-check">✓</span> SSO & audit logs</li>
+          </ul>
+          <a href="#" class="btn-outline plan-btn">Start Team Trial</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS SECTION ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label reveal">Testimonials</div>
+      <h2 class="section-title reveal">Loved by <span class="gradient-text">50,000+ teams</span></h2>
+      <div class="testimonials-grid">
+
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">"TaskFlow completely changed how our engineering team operates. We cut our weekly standup time in half and started shipping 30% faster. It's the only tool we use."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">S</div>
+            <div>
+              <div class="testi-name">Sarah Chen</div>
+              <div class="testi-role">Engineering Lead @ Dropbox</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">"We evaluated 8 project management tools. TaskFlow was the only one our whole team actually enjoyed using. The analytics dashboard alone is worth the price."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">M</div>
+            <div>
+              <div class="testi-name">Marcus Rivera</div>
+              <div class="testi-role">Product Manager @ Figma</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">"As a solo founder, TaskFlow is my second brain. I manage my entire roadmap, customer feedback, and launch checklist in one place. Absolutely indispensable."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">J</div>
+            <div>
+              <div class="testi-name">Jamie Park</div>
+              <div class="testi-role">Founder @ Launchpad Studio</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ SECTION ========== -->
+  <section class="faq" id="faq">
+    <div class="container faq-inner">
+      <div>
+        <div class="section-label reveal">FAQ</div>
+        <h2 class="section-title reveal">Common <span class="gradient-text">questions</span></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Is there a free plan? What's included?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Our Basic plan is completely free, forever. It includes up to 5 projects, 10 tasks per project, basic analytics, and 2GB of storage. No credit card required to sign up.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Can I switch plans or cancel anytime?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. You can upgrade, downgrade, or cancel your subscription at any time from your account settings. If you cancel a paid plan, you'll retain access until the end of your billing period.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Does TaskFlow integrate with other tools?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>TaskFlow integrates with 50+ tools including Slack, GitHub, Figma, Google Workspace, Zoom, Zapier, and more. We also offer a full REST API and webhooks for custom integrations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            How secure is our data?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>TaskFlow is SOC 2 Type II certified and fully GDPR compliant. All data is encrypted in transit and at rest. We perform regular third-party security audits and offer SSO and 2FA on all plans.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA SECTION ========== -->
+  <section class="final-cta">
+    <div class="cta-bg">
+      <div class="cta-orb orb-1"></div>
+      <div class="cta-orb orb-2"></div>
+    </div>
+    <div class="container cta-inner">
+      <div class="cta-badge reveal">🚀 Free to start, no credit card needed</div>
+      <h2 class="cta-title reveal">Ready to work smarter?</h2>
+      <p class="cta-sub reveal">Join 50,000+ teams already using TaskFlow to deliver great work.</p>
+      <div class="cta-actions reveal">
+        <a href="#" class="btn-white btn-lg">
+          Start Now — It's Free
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="btn-outline-white btn-lg">Talk to Sales</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-icon">⬡</span> TaskFlow
+          </a>
+          <p>The smarter way to manage work. Built for modern teams.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter" class="social-btn">𝕏</a>
+            <a href="#" aria-label="LinkedIn" class="social-btn">in</a>
+            <a href="#" aria-label="GitHub" class="social-btn">⌥</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Product</h5>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Changelog</a>
+            <a href="#">Roadmap</a>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+          </div>
+          <div class="footer-col">
+            <h5>Resources</h5>
+            <a href="#">Docs</a>
+            <a href="#">API</a>
+            <a href="#">Status</a>
+            <a href="#">Integrations</a>
+          </div>
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Security</a>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 TaskFlow Inc. All rights reserved.</span>
+        <span>Made with ♥ for productive teams</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -287,6 +287,30 @@ document.querySelectorAll('.feature-card, .testi-card').forEach(card => {
   });
 });
 
+/* ---- Dashboard Sidebar Navigation ---- */
+const dashNavItems = document.querySelectorAll('.dash-nav-item');
+const dashPages    = document.querySelectorAll('.dash-page');
+const browserUrl   = document.getElementById('browserUrl');
+
+dashNavItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const page = item.dataset.page;
+    const url  = item.dataset.url;
+
+    // Update active sidebar item
+    dashNavItems.forEach(n => n.classList.remove('active'));
+    item.classList.add('active');
+
+    // Show corresponding page
+    dashPages.forEach(p => p.classList.remove('active'));
+    const target = document.getElementById('page-' + page);
+    if (target) target.classList.add('active');
+
+    // Update browser URL bar
+    if (browserUrl) browserUrl.textContent = url;
+  });
+});
+
 /* ---- Dashboard Floating Cards Bounce ---- */
 const floatingCards = document.querySelectorAll('.floating-card');
 floatingCards.forEach((card, i) => {
@@ -302,14 +326,37 @@ floatStyle.textContent = `
 `;
 document.head.appendChild(floatStyle);
 
-/* ---- Logo Strip Subtle Scroll Animation ---- */
-const logoItems = document.querySelectorAll('.logo-item');
-logoItems.forEach((item, i) => {
-  item.style.transitionDelay = `${i * 60}ms`;
-});
+/* ---- Logo Carousel — seamless infinite scroll ---- */
+(function () {
+  const carousel  = document.getElementById('logosCarousel');
+  const track1    = document.getElementById('logoTrack1');
+  const track2    = document.getElementById('logoTrack2');
+  if (!carousel || !track1 || !track2) return;
+
+  // After fonts load, sync track2 width to exactly match track1
+  function syncCarousel() {
+    const w = track1.scrollWidth;
+    // Set animation to move exactly one track width (= 50% of the doubled belt)
+    carousel.style.setProperty('--track-width', w + 'px');
+  }
+
+  // Run after fonts are ready
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(syncCarousel);
+  } else {
+    window.addEventListener('load', syncCarousel);
+  }
+
+  // Pause on hover
+  carousel.addEventListener('mouseenter', () => {
+    carousel.style.animationPlayState = 'paused';
+  });
+  carousel.addEventListener('mouseleave', () => {
+    carousel.style.animationPlayState = 'running';
+  });
+})();
 
 /* ---- Init: Ensure first visible elements animate on load ---- */
 window.addEventListener('load', () => {
-  // Trigger scroll-based reveals for elements already in view
   window.dispatchEvent(new Event('scroll'));
 });

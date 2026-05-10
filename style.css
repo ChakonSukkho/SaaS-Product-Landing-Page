@@ -405,15 +405,134 @@ img { max-width: 100%; display: block; }
   padding: 0 8px;
 }
 .dash-nav { display: flex; flex-direction: column; gap: 4px; }
+
+/* Sidebar items — clickable */
 .dash-nav-item {
   display: flex; align-items: center; gap: 8px;
   font-size: 0.78rem; color: rgba(255,255,255,0.5);
   padding: 8px 10px; border-radius: 8px; cursor: pointer;
   transition: var(--transition);
+  user-select: none;
 }
 .dash-nav-item:hover { background: rgba(255,255,255,0.08); color: #fff; }
 .dash-nav-item.active { background: rgba(255,255,255,0.12); color: #fff; }
 .dash-nav-item .icon { font-size: 0.9rem; }
+
+/* Main panel wrapper (contains pages) */
+.dash-main-wrap {
+  flex: 1;
+  overflow: hidden;
+  background: #f8faff;
+  position: relative;
+}
+
+/* ---- Dashboard Page Switching ---- */
+.dash-page {
+  display: none;
+  width: 100%; height: 100%;
+  padding: 16px;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeSlideIn 0.28s ease forwards;
+}
+.dash-page.active {
+  display: flex;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.dash-filter-row { display: flex; gap: 4px; }
+.dash-filter {
+  font-size: 0.65rem; font-weight: 600; padding: 3px 9px;
+  border-radius: 20px; cursor: pointer;
+  background: rgba(29,78,216,0.06); color: var(--gray-3);
+  border: 1px solid transparent; transition: var(--transition);
+}
+.dash-filter.active-filter {
+  background: rgba(29,78,216,0.12); color: var(--blue);
+  border-color: rgba(29,78,216,0.2);
+}
+
+/* New / Invite button */
+.dash-new-btn {
+  font-size: 0.68rem; font-weight: 700;
+  background: var(--gradient); color: #fff;
+  border: none; border-radius: 20px; padding: 5px 12px;
+  cursor: pointer; transition: var(--transition);
+}
+.dash-new-btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+/* Tasks page — progress bar */
+.tasks-progress-bar { margin-top: 4px; }
+.tp-label {
+  display: flex; justify-content: space-between;
+  font-size: 0.65rem; color: var(--gray-3); margin-bottom: 5px;
+}
+.tp-track { height: 6px; background: var(--gray-1); border-radius: 50px; overflow: hidden; }
+.tp-fill  { height: 100%; background: var(--gradient); border-radius: 50px; }
+
+/* Projects page */
+.projects-grid { display: flex; flex-direction: column; gap: 8px; }
+.project-card {
+  background: #fff; border: 1px solid var(--gray-1);
+  border-radius: 8px; padding: 10px 12px;
+}
+.proj-header { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; }
+.proj-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.proj-name { font-size: 0.73rem; font-weight: 600; color: var(--navy); flex: 1; }
+.proj-status {
+  font-size: 0.6rem; font-weight: 700; padding: 2px 7px; border-radius: 20px;
+}
+.proj-status.on-track { background: rgba(16,185,129,0.1); color: #059669; }
+.proj-status.at-risk  { background: rgba(245,158,11,0.12); color: #d97706; }
+.proj-bar-wrap { height: 5px; background: var(--gray-1); border-radius: 50px; overflow: hidden; margin-bottom: 5px; }
+.proj-bar { height: 100%; border-radius: 50px; }
+.proj-meta { display: flex; justify-content: space-between; font-size: 0.62rem; color: var(--gray-3); }
+
+/* Analytics page — mini chart */
+.mini-chart { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.chart-bars {
+  flex: 1; display: flex; align-items: flex-end; gap: 6px;
+  background: #fff; border: 1px solid var(--gray-1);
+  border-radius: 8px; padding: 10px 12px;
+  min-height: 80px;
+}
+.chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.chart-bar {
+  width: 100%; border-radius: 4px 4px 0 0;
+  background: var(--gradient); min-height: 6px;
+  transition: height 0.8s ease;
+}
+.chart-day { font-size: 0.58rem; color: var(--gray-3); font-weight: 600; }
+.chart-label { font-size: 0.62rem; color: var(--gray-3); text-align: center; }
+
+/* Team page */
+.team-list { display: flex; flex-direction: column; gap: 6px; }
+.team-member {
+  display: flex; align-items: center; gap: 10px;
+  background: #fff; border: 1px solid var(--gray-1);
+  border-radius: 8px; padding: 8px 12px;
+}
+.team-avatar {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem; font-weight: 700; color: #fff;
+}
+.team-info { flex: 1; }
+.team-name {
+  font-size: 0.72rem; font-weight: 600; color: var(--navy);
+  display: flex; align-items: center; gap: 5px;
+}
+.team-role  { font-size: 0.62rem; color: var(--gray-3); }
+.team-tasks { font-size: 0.65rem; color: var(--blue); font-weight: 600; }
+.online-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #22c55e; display: inline-block;
+  box-shadow: 0 0 0 2px rgba(34,197,94,0.25);
+}
 
 /* Main */
 .dash-main {
@@ -519,10 +638,10 @@ img { max-width: 100%; display: block; }
 .prog-pct { font-size: 0.7rem; color: var(--gray-3); }
 
 /* ============================================================
-   LOGOS STRIP
+   LOGOS CAROUSEL — Auto-scrolling seamless
    ============================================================ */
 .logos-strip {
-  padding: 32px 0;
+  padding: 28px 0;
   border-top: 1px solid var(--gray-1);
   border-bottom: 1px solid var(--gray-1);
   background: var(--white);
@@ -530,19 +649,62 @@ img { max-width: 100%; display: block; }
 }
 .logos-label {
   text-align: center;
-  font-size: 0.78rem; color: var(--gray-3); text-transform: uppercase;
-  letter-spacing: 0.1em; margin-bottom: 20px;
-}
-.logos-track {
-  display: flex; gap: 48px; justify-content: center;
-  flex-wrap: wrap;
-}
-.logo-item {
+  font-size: 0.72rem; color: var(--gray-2);
   font-family: var(--font-display);
-  font-weight: 700; font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  margin-bottom: 20px;
+}
+.logos-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.logos-fade-left,
+.logos-fade-right {
+  position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2;
+  pointer-events: none;
+}
+.logos-fade-left  { left: 0;  background: linear-gradient(to right, #fff 40%, transparent); }
+.logos-fade-right { right: 0; background: linear-gradient(to left,  #fff 40%, transparent); }
+
+/* The scrolling belt: two identical rows side by side */
+.logos-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  --track-width: 50%;
+  animation: scroll-logos 28s linear infinite;
+  will-change: transform;
+}
+.logos-carousel:hover { animation-play-state: paused; }
+
+@keyframes scroll-logos {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(var(--track-width) * -1)); }
+}
+
+/* Each track: one full set of logos, no wrapping */
+.logos-carousel .logos-track {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Each logo item with symmetric padding as spacing */
+.logo-item {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
   color: var(--gray-2);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 0 44px;
   transition: color 0.3s ease;
   cursor: default;
+  user-select: none;
 }
 .logo-item:hover { color: var(--blue); }
 
@@ -1038,8 +1200,10 @@ input:checked + .slider::before { transform: translateX(20px); }
   .pricing-card.popular:hover { transform: translateY(-4px); }
   .testimonials-grid { grid-template-columns: 1fr; }
   .dashboard-ui { height: auto; flex-direction: column; }
-  .dash-sidebar { width: 100%; flex-direction: row; align-items: center; gap: 16px; padding: 12px 16px; }
-  .dash-nav { flex-direction: row; flex-wrap: wrap; gap: 4px; }
+  .dash-sidebar { width: 100%; min-width: unset; flex-direction: row; align-items: center; gap: 8px; padding: 10px 12px; }
+  .dash-nav { flex-direction: row; flex-wrap: wrap; gap: 2px; }
+  .dash-nav-item { padding: 5px 8px; font-size: 0.7rem; }
+  .dash-main-wrap { min-height: 260px; }
   .dash-cards { grid-template-columns: repeat(3, 1fr); }
   .card-notif { left: -8px; bottom: -12px; }
   .card-progress { right: -8px; top: 20px; }
